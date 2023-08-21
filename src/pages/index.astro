@@ -1,0 +1,87 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Home from "../components/Home.astro";
+import Projects from "../components/Projects.astro";
+import About from "../components/About.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Treslog | Tristan Vidal Portfolio 🔥">
+  <main class="bg-black min-w-[400px]">
+    <Nav />
+    <Home />
+    <Projects />
+    <About />
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  @font-face {
+    font-family: "Inter";
+    src: local("Inter"), url("/fonts/Inter-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src: local("Inter"), url("/fonts/Inter-Bold.ttf");
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src: local("Inter"), url("/fonts/Inter-ExtraBold.ttf");
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  html {
+    color-scheme: dark;
+    font-family: Inter, sans-serif;
+  }
+
+  :root {
+    --font-size-base: 15px;
+    --color-bg: hsl(0, 0%, 0%);
+  }
+  html {
+    font-size: var(--font-size-base);
+    background-color: var(--color-bg);
+    scroll-behavior: smooth;
+  }
+</style>
+
+<script defer>
+  const observer = new IntersectionObserver((e) => {
+    e.forEach((e) => {
+      e.isIntersecting && show(e.target);
+    });
+  });
+  function show(e) {
+    e.classList.add("show");
+  }
+  const elements = document.querySelectorAll(".wait");
+  elements.forEach((e) => {
+    observer.observe(e);
+  });
+
+  const buttonMobileMenu = document.getElementById("button-mobile-menu");
+  const mobileMenu = document.getElementById("mobile-menu");
+  buttonMobileMenu.addEventListener("click", toggleMobileMenu);
+
+  function toggleMobileMenu() {
+    mobileMenu.classList.toggle("hidden");
+  }
+
+  let name = `🔥 Treslog 🔥`;
+  console.log(
+    "%c" + name,
+    "font-family:monospace; font-size: 12px; color: red; background: #000; font-weight: bold;"
+  );
+
+  fetch("https://edge.tres.workers.dev").catch((error) => {
+    console.log(error);
+  });
+</script>

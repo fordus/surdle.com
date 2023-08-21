@@ -1,0 +1,93 @@
+---
+const aboutTimeline = [
+  {
+    date: "April 2023",
+    description:
+      "I'm currently expanding my skillset by learning new programming languages like Javascript and Python, and I'm working on several projects using popular frameworks like React. You can find my projects on my GitHub profile.",
+  },
+  {
+    date: "February 2022",
+    description:
+      "As a software development student at the university, I started gaining practical experience by taking on freelance work. I have also mentored other students to improve their skills in programming and development. ",
+  },
+  {
+    date: "September 2019",
+    description:
+      "Gained valuable experience in networking, programming, and operating systems through completing a training program. Skilled in installing and configuring Linux servers and providing basic services such as DNS and firewall for a Moodle platform.",
+  },
+];
+---
+
+<section id="about" class="wait item">
+  <div
+    class="border-[rgb(31,32,47)] max-w-3xl self-center mx-auto my-[90px] border-t"
+  >
+  </div>
+
+  <article
+    class="w-full max-w-3xl px-5 m-auto text-left sm:w-3/4 xl:w-4/6 2xl:w-3/5 sm:px-0"
+  >
+    <h2
+      class="text-5xl font-bold leading-normal tracking-tight text-white text-effect"
+    >
+      About
+    </h2>
+    <p class="pt-3 mb-10 text-lg tracking-tight text-gray 2xl:pl-0">
+      A quick summary of the things I've done. Sorted chronologically.
+    </p>
+  </article>
+  <article
+    class="w-full max-w-3xl px-5 m-auto my-10 sm:w-3/4 xl:w-4/6 2xl:w-3/5 sm:px-0"
+  >
+    <ol class="relative border-l border-blue text-gray">
+      {
+        aboutTimeline.map(({ date, description }) => (
+          <li class="mb-10 ml-4">
+            <div class="absolute w-3 h-3 bg-blue rounded-full mt-1.5 -left-[0.413rem] border-2 border-black bg-gray-700" />
+            <time class="mb-1 text-sm font-bold leading-none tracking-tight text-gray-500 text-blue">
+              {date}
+            </time>
+            <p class="text-lg font-normal tracking-tight text-white">
+              {description}
+              <br />
+            </p>
+          </li>
+        ))
+      }
+    </ol>
+  </article>
+</section>
+
+<style>
+  section {
+    background: radial-gradient(
+      ellipse 50% 50% at 80% 50%,
+      rgba(29, 81, 204, 0.059),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .item {
+    transition: 0.3s;
+  }
+
+  .wait {
+    opacity: 0;
+  }
+
+  .show {
+    opacity: 1;
+    animation: 1000ms ease 100ms 1 normal backwards running tres;
+  }
+
+  @keyframes tres {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>

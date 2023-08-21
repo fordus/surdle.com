@@ -1,0 +1,132 @@
+---
+import MainLogo from "./logos/Main.astro";
+---
+
+<nav class="border-b border-light-gray py-2 fixed w-full z-50 sm:px-6">
+  <div
+    class="container flex flex-wrap items-center justify-between mx-auto max-w-3xl"
+  >
+    <a
+      href="https://treslog.com/"
+      class="ml-5 sm:ml-0 flex gap-3 justify-center mt-2"
+    >
+      <MainLogo />
+      <span
+        class="text-xl font-bold tracking-tight text-white whitespace-nowrap text-effect"
+        >Treslog</span
+      >
+    </a>
+    <button
+      id="button-mobile-menu"
+      data-collapse-toggle="mobile-menu"
+      type="button"
+      class="inline-flex items-center p-2 ml-3 text-xs rounded-lg text-gray md:hidden hover:text-white focus:outline-none focus:ring-2 focus:ring-liborder-light-gray"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Open main menu</span>
+      <svg
+        class="w-6 h-6 fill-secondary-font"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+          clip-rule="evenodd"></path>
+      </svg>
+      <svg
+        class="hidden w-6 h-6 fill-gray"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+      <ul
+        class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-[15px] font-base"
+      >
+        <li class="border-b border-light-gray md:border-0">
+          <a
+            title="Home"
+            href="#home"
+            class="block py-2 pl-3 pr-4 tracking-tight text-gray hover:text-white md:p-0"
+          >
+            Home</a
+          >
+        </li>
+        <li class="border-b border-light-gray md:border-0">
+          <a
+            title="Projects"
+            href="#projects"
+            class="block py-2 pl-3 pr-4 tracking-tight text-gray hover:text-white md:p-0"
+          >
+            Projects</a
+          >
+        </li>
+        <li class="border-b border-light-gray md:border-0">
+          <a
+            title="About"
+            href="#about"
+            class="block py-2 pl-3 pr-4 rounded text-gray hover:text-white md:bg-transparent md:text-blue-700 md:p-0"
+            aria-current="page">About</a
+          >
+        </li>
+
+        <!-- <li class="border-b border-light-gray md:border-0">
+          <a href="#"
+            class="block py-2 pl-3 pr-4 text-gray hover:text-white hover:bg-gray-50 md:p-0">
+            Blog</a>
+        </li> -->
+        <li>
+          <a
+            title="GitHub"
+            href="https://github.com/treslog"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex pt-2 pl-3 pr-4 font-bold tracking-tight bg-clip-text gradient md:p-0"
+          >
+            GitHub
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+  nav {
+    background: rgba(6, 6, 6, 0.6);
+    backdrop-filter: blur(8px);
+  }
+
+  a:hover {
+    transition: 0.3s;
+  }
+
+  .gradient {
+    animation: flow 5s ease-in-out infinite;
+    background: linear-gradient(90deg, #007cfb, #00dfd8);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  @keyframes flow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+</style>
