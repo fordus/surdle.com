@@ -7,7 +7,7 @@ import About from "../components/About.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Treslog | Tristan Vidal Portfolio 🔥">
+<Layout title="Surdle | Tristan Vidal Portfolio 🔥">
   <main class="bg-black min-w-[400px]">
     <Nav />
     <Home />
@@ -54,34 +54,34 @@ import Footer from "../components/Footer.astro";
 </style>
 
 <script defer>
-  const observer = new IntersectionObserver((e) => {
-    e.forEach((e) => {
-      e.isIntersecting && show(e.target);
-    });
+const observer = new IntersectionObserver((e) => {
+  e.forEach((e) => {
+    e.isIntersecting && show(e.target);
   });
-  function show(e) {
-    e.classList.add("show");
-  }
-  const elements = document.querySelectorAll(".wait");
-  elements.forEach((e) => {
-    observer.observe(e);
-  });
+});
+function show(e) {
+  e.classList.add("show");
+}
+const elements = document.querySelectorAll(".wait");
+elements.forEach((e) => {
+  observer.observe(e);
+});
 
-  const buttonMobileMenu = document.getElementById("button-mobile-menu");
-  const mobileMenu = document.getElementById("mobile-menu");
-  buttonMobileMenu.addEventListener("click", toggleMobileMenu);
+const buttonMobileMenu = document.getElementById("button-mobile-menu");
+const mobileMenu = document.getElementById("mobile-menu");
+buttonMobileMenu.addEventListener("click", toggleMobileMenu);
 
-  function toggleMobileMenu() {
-    mobileMenu.classList.toggle("hidden");
-  }
+function toggleMobileMenu() {
+  mobileMenu.classList.toggle("hidden");
+}
 
-  let name = `🔥 Treslog 🔥`;
-  console.log(
-    "%c" + name,
-    "font-family:monospace; font-size: 12px; color: red; background: #000; font-weight: bold;"
-  );
+let name = `🔥 Treslog 🔥`;
+console.log(
+  "%c" + name,
+  "font-family:monospace; font-size: 12px; color: red; background: #000; font-weight: bold;"
+);
 
-  fetch("https://edge.tres.workers.dev").catch((error) => {
-    console.log(error);
-  });
+fetch("https://edge.tres.workers.dev").catch((error) => {
+  console.log(error);
+});
 </script>
