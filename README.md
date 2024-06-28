@@ -1,6 +1,6 @@
 # 🚀 surdle.com 🔥
 
-Welcome to my personal website built with Astro. This project showcases my projects.
+Welcome to my personal website built with Astro.
 
 ## 🛠️ Built With
 
